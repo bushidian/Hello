@@ -6,3 +6,6 @@ RUN dotnet restore
 
 COPY . ./
 RUN dotnet publish -c Release -o out
+
+EXPOSE 5000
+
