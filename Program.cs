@@ -14,12 +14,22 @@ namespace hello
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("config.json", optional: false, reloadOnChange: true)
+                .AddCommandLine(args)
+                .Build();
+
+            BuildWebHost(args, config).Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
+        public static IWebHost BuildWebHost(string[] args, IConfiguration config) =>
+           WebHost.CreateDefaultBuilder(args)
+               .UseConfiguration(config)
+               .UseKestrel()
+               .UseContentRoot(Directory.GetCurrentDirectory())
+               .UseIISIntegration()
+               .UseStartup<Startup>()
+               .Build();
     }
 }
