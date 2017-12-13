@@ -256,3 +256,4 @@ pub/
 .eshopdocker_*
 
 #Ignore project files
+out/
