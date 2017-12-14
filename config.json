@@ -5,5 +5,5 @@
       "Default": "Warning"
     }
   },
-  "urls": "http://0.0.0.0:5004"
+  "urls": "http://0.0.0.0:80"
 }
