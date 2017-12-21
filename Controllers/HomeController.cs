@@ -17,7 +17,7 @@ namespace hello.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page. hello world";
+            ViewData["Message"] = "Your application description page.";
 
             return View();
         }
