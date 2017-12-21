@@ -24,7 +24,9 @@ namespace hello.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            var ip = HttpContext.Connection.LocalIpAddress.ToString();
+            
+            ViewData["Message"] = "Your contact page. my ip is:" + ip;
 
             return View();
         }
