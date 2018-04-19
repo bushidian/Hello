@@ -9,6 +9,6 @@ ENTRYPOINT ["dotnet", "out/hello.dll"]
 
 # PORT
 
-EXPOSE 80
+EXPOSE 5000
 
 
